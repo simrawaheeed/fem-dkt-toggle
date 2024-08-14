@@ -13,7 +13,7 @@ const browsersync = require('browser-sync').create();
     
 // Sass Task
 async function scssTask() {
-    return src('app/scss/styles.scss', { sourcemaps: true, allowEmpty: true })
+    return src('app/scss/styles.scss', { sourcemaps: true})
     .pipe(sass())
     .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(dest('dist', {sourcemaps: '.' }));
@@ -22,7 +22,7 @@ async function scssTask() {
 
 // Javascript Task
 async function jsTask() {
-    return src('app/js/scirpt.js', { sourcemaps: true, allowEmpty: true })
+    return src('app/js/scirpt.js', { sourcemaps: true})
     .pipe(babel({ presets: ['@babel/preset-env'] }))
     .pipe(terser())
     .pipe(dest('dist', { sourcemaps: '.' }));

@@ -1,3 +1,4 @@
+
 // 640px, 950px, 1400px
 $breakpoints-up: (
     'medium': '40em',
@@ -6,7 +7,7 @@ $breakpoints-up: (
 );
 
 // 639px, 949px, 1399px
-$breakpoints-up: (
+$breakpoints-down: (
     'small': '39.9375em',
     'medium': '59.3125em',
     'large': '87.4375em',
