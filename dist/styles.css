@@ -1,1 +1,127 @@
-:root{--limegreen:#1db489;--brightred:#dc414c;--facebook:#198ff5;--twitter:#1ca0f2;--instagram-start:#fdc468;--instagram-end:#df4996;--youtube:#c4032a;--toggle-bg-start:#378fe6;--toggle-bg-start:#3eda82;--toggle:#aeb3cb;--dark-bg:#1e202a;--dark-top-bg:#1f212e;--dark-card:#252a41;--dark-text1:#8b97c6;--dark-text2:#fff;--light-bg:#fff;--light-top-bg:#f5f7ff;--light-card:#f0f2fa;--light-text1:#63687e;--light-text2:#1e202a;--font-inter:"Inter",sans-serif}html{box-sizing:border-box;font-size:100%}*,:after,:before{box-sizing:inherit}body{background:var(--dark-bg);color:var(--dark-text2);font-family:var(--font-inter);margin:0;padding:0}h1,h2,h3{margin-top:0}a,a:active,a:visited{text-decoration:none}.container{margin:0 auto;max-width:69.375rem;padding:0}@media (min-width:87.4375em){.container{padding:0}.header{display:flex;justify-content:space-between}}.toggle{border:none}.toggle__button{background-color:var(--toggle);border-radius:50%;height:1rem;width:1rem}.card{padding:1.25rem}/*# sourceMappingURL=styles.css.map */
+:root {
+  --limegreen: hsl(163, 72%, 41%);
+  --brightred: hsl(356, 69%, 56%);
+  --facebook: hsl(208, 92%, 53%);
+  --twitter: hsl(203, 89%, 53%);
+  --instagram-start: hsl(37, 97%, 70%);
+  --instagram-end: hsl(329, 70%, 58%);
+  --youtube: hsl(348, 97%, 39%);
+  --toggle-bg-start: hsl(210, 78%, 56%);
+  --toggle-bg-end: hsl(146, 68%, 55%);
+  --toggle: hsl(230, 22%, 74%);
+  --dark-bg: hsl(230, 17%, 14%);
+  --dark-top-bg: hsl(232, 19%, 15%);
+  --dark-card: hsl(228, 28%, 20%);
+  --dark-text1: hsl(228, 34%, 66%);
+  --dark-text2: hsl(0, 0%, 100%);
+  --light-bg: hsl(0, 0%, 100%);
+  --light-top-bg: hsl(225, 100%, 98%);
+  --light-card: hsl(227, 47%, 96%);
+  --light-text1: hsl(228, 12%, 44%);
+  --light-text2: hsl(230, 17%, 14%);
+}
+
+:root {
+  --font-inter: "Inter", sans-serif;
+}
+
+html {
+  font-size: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-inter);
+  background: var(--dark-bg);
+  color: var(--dark-text2);
+}
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.1875rem;
+}
+@media (min-width: 87.4375em) {
+  h1 {
+    font-size: 1.75rem;
+  }
+}
+
+a,
+a:visited,
+a:active {
+  text-decoration: none;
+}
+
+.container {
+  padding: 0 1.5625rem;
+  max-width: 69.375rem;
+  margin: 0 auto 2.875rem;
+}
+@media (min-width: 87.4375em) {
+  .container {
+    padding: 0;
+  }
+}
+
+.header {
+  margin-top: 2.25rem;
+}
+@media (min-width: 70.875em) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.header__subtitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--dark-text1);
+}
+.toggle {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: none;
+}
+.toggle label[for=dark] {
+  grid-column: 1/2;
+}
+.toggle__wrapper {
+  height: 1.5rem;
+}
+.toggle input[type=radio] {
+  opacity: 0;
+}
+.toggle__background {
+  display: block;
+  height: 100%;
+  border-radius: 0.75rem;
+  background: linear-gradient(225deg, var(--toggle-bg-end) 0%, var(--toggle-bg-start) 98.02%);
+}
+.toggle__button {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: var(--toggle);
+}
+
+.card {
+  padding: 1.25rem;
+}
+
+/*# sourceMappingURL=styles.css.map */
