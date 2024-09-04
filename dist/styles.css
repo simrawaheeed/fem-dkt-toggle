@@ -79,13 +79,22 @@ a:active {
 }
 
 .header {
+  display: flex;
+  flex-wrap: wrap;
   margin-top: 2.25rem;
 }
 @media (min-width: 70.875em) {
   .header {
-    display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+}
+.header__title {
+  width: 100%;
+}
+@media (min-width: 70.875em) {
+  .header__title {
+    width: auto;
   }
 }
 .header__subtitle {
@@ -93,18 +102,22 @@ a:active {
   font-weight: 700;
   color: var(--dark-text1);
 }
+
 .toggle {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 3.75rem 1fr;
   grid-template-rows: repeat(2, 1fr);
+  gap: 0.3rem 0.75rem;
   border: none;
 }
 .toggle label[for=dark] {
   grid-column: 1/2;
+  justify-self: end;
 }
 .toggle label[for=system] {
-  grid-column: 2/3;
+  grid-column: 1/4;
   grid-row: 2/3;
+  justify-self: center;
 }
 .toggle label[for=light] {
   grid-column: 3/4;
@@ -116,7 +129,10 @@ a:active {
   height: 1.5rem;
 }
 .toggle input[type=radio] {
+  margin: 0 -0.125rem 0 -0.125rem;
   opacity: 0;
+  width: 1.25rem;
+  height: 1.5rem;
 }
 .toggle__background {
   display: block;
@@ -126,12 +142,27 @@ a:active {
   top: 0;
   border-radius: 0.75rem;
   background: linear-gradient(225deg, var(--toggle-bg-end) 0%, var(--toggle-bg-start) 98.02%);
+  pointer-events: none;
 }
 .toggle__button {
-  width: 1rem;
-  height: 1rem;
+  position: absolute;
+  left: 0.1875rem;
+  top: 0.1875rem;
+  right: 100%;
+  width: 1.125rem;
+  height: 1.125rem;
   border-radius: 50%;
-  background-color: var(--toggle);
+  background-color: var(--dark-bg);
+  transition: all 150ms ease-in-out;
+}
+.toggle #light:checked ~ .toggle__button {
+  left: calc(100% - 21px);
+  right: 3px;
+}
+.toggle #system:checked ~ .toggle__button {
+  left: 50%;
+  right: auto;
+  transform: translate(-50%);
 }
 
 .card {
