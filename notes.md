@@ -20,3 +20,10 @@ Accessibility
 utils - add things like variables, functions, mixins, scss mixins etc
 1.  breakpoints - add mixins, lat use (faster way to load your media queries)
 mixins usually load the reusable code that you want to use multiple times in the code base
+
+# How to come up with Class Names
+BEM = Block Element Modifier
+Block = Card (parent element)
+Element = icon, platform, account, change (child elements)
+Modifier = fb etc (style or design for parent or child)
+For naming - first write the parent then child : e.g, card__icon, card__icon--facebook
